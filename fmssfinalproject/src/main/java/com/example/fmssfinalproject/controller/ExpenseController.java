@@ -2,7 +2,7 @@ package com.example.fmssfinalproject.controller;
 
 import com.example.fmssfinalproject.dto.request.CreateUpdateExpenseRequest;
 import com.example.fmssfinalproject.dto.response.ExpenseDto;
-import com.example.fmssfinalproject.service.impl.ExpenseService;
+import com.example.fmssfinalproject.service.IExpenseService;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.http.HttpStatus;
@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping("/api/v1/expenses")
 @CrossOrigin
 public class ExpenseController {
-    private final ExpenseService expenseService;
+    private final IExpenseService expenseService;
 
     @PostMapping
     ResponseEntity<ExpenseDto> saveExpense(@Valid @RequestBody CreateUpdateExpenseRequest expenseRequest) {
