@@ -6,7 +6,7 @@ import com.example.fmssfinalproject.dto.response.LeaveDto;
 import com.example.fmssfinalproject.exception.IncorrectDateSelection;
 import com.example.fmssfinalproject.exception.ResourceNotFoundException;
 
-import com.example.fmssfinalproject.mapper.impl.LeaveMapperImpl;
+import com.example.fmssfinalproject.mapper.ILeaveMapper;
 import com.example.fmssfinalproject.model.Leave;
 import com.example.fmssfinalproject.repository.LeaveRepository;
 import com.example.fmssfinalproject.service.ILeaveService;
@@ -23,7 +23,7 @@ import java.util.List;
 @Service
 public class LeaveService implements ILeaveService {
     private final LeaveRepository leaveRepository;
-    private final LeaveMapperImpl leaveMapper;
+    private final ILeaveMapper leaveMapper;
 
 
     @Override
