@@ -5,7 +5,7 @@ import com.example.fmssfinalproject.dto.response.ExpenseDto;
 import com.example.fmssfinalproject.exception.ResourceNotFoundException;
 
 
-import com.example.fmssfinalproject.mapper.impl.ExpenseMapperImpl;
+import com.example.fmssfinalproject.mapper.IExpenseMapper;
 import com.example.fmssfinalproject.model.Expense;
 
 import com.example.fmssfinalproject.repository.ExpenseRepository;
@@ -20,7 +20,7 @@ import java.util.List;
 @Service
 public class ExpenseService implements IExpenseService {
     private final ExpenseRepository expenseRepository;
-    private final ExpenseMapperImpl expenseMapper;
+    private final IExpenseMapper expenseMapper;
 
 
     @Override
