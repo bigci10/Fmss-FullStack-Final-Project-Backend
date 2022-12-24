@@ -3,7 +3,7 @@ package com.example.fmssfinalproject.controller;
 
 import com.example.fmssfinalproject.dto.request.CreateUpdateLeaveRequest;
 import com.example.fmssfinalproject.dto.response.LeaveDto;
-import com.example.fmssfinalproject.service.impl.LeaveService;
+import com.example.fmssfinalproject.service.ILeaveService;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.http.HttpStatus;
@@ -18,7 +18,7 @@ import java.util.List;
 @RequestMapping("/api/v1/leaves")
 @CrossOrigin
 public class LeaveController {
-    private final LeaveService leaveService;
+    private final ILeaveService leaveService;
 
     @PostMapping
     ResponseEntity<LeaveDto> saveLeave(@Valid @RequestBody CreateUpdateLeaveRequest leaveRequest) {
