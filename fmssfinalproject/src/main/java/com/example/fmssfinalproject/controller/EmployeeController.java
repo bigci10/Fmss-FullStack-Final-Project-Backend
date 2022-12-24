@@ -4,7 +4,7 @@ package com.example.fmssfinalproject.controller;
 import com.example.fmssfinalproject.dto.request.CreateUpdateEmployeeRequest;
 
 import com.example.fmssfinalproject.dto.response.EmployeeDto;
-import com.example.fmssfinalproject.service.impl.EmployeeService;
+import com.example.fmssfinalproject.service.IEmployeeService;
 import lombok.RequiredArgsConstructor;
 
 import org.apache.commons.collections4.CollectionUtils;
@@ -21,7 +21,7 @@ import java.util.List;
 @RequestMapping("/api/v1/employees")
 @CrossOrigin
 public class EmployeeController {
-    private final EmployeeService employeeService;
+    private final IEmployeeService employeeService;
 
     @PostMapping
     ResponseEntity<EmployeeDto> saveEmployee(@Valid @RequestBody CreateUpdateEmployeeRequest createEmployeeRequest) {
