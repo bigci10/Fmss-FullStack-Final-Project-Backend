@@ -22,7 +22,7 @@ public class LeaveController {
 
     @PostMapping
     ResponseEntity<LeaveDto> saveLeave(@Valid @RequestBody CreateUpdateLeaveRequest leaveRequest) {
-        LeaveDto leaveDto = leaveService.saveLeave(leaveRequest);
+        LeaveDto leaveDto = this.leaveService.saveLeave(leaveRequest);
         return ResponseEntity.ok(leaveDto);
     }
 
@@ -45,12 +45,12 @@ public class LeaveController {
     @DeleteMapping("/{id}")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void deleteLeaveById(@PathVariable Long id) {
-        leaveService.deleteLeaveById(id);
+        this.leaveService.deleteLeaveById(id);
     }
 
     @PutMapping("/{id}")
     ResponseEntity<LeaveDto> updateLeave(@PathVariable Long id, @Valid @RequestBody CreateUpdateLeaveRequest updateLeaveRequest) {
-        LeaveDto updatedLeave = leaveService.updateLeave(updateLeaveRequest, id);
+        LeaveDto updatedLeave = this.leaveService.updateLeave(updateLeaveRequest, id);
 
         return ResponseEntity.ok(updatedLeave);
 
