@@ -21,7 +21,7 @@ public class ExpenseController {
 
     @PostMapping
     ResponseEntity<ExpenseDto> saveExpense(@Valid @RequestBody CreateUpdateExpenseRequest expenseRequest) {
-        ExpenseDto expenseDto = expenseService.saveExpense(expenseRequest);
+        ExpenseDto expenseDto = this.expenseService.saveExpense(expenseRequest);
 
         return ResponseEntity.ok(expenseDto);
     }
@@ -50,7 +50,7 @@ public class ExpenseController {
 
     @PutMapping("/{id}")
     ResponseEntity<ExpenseDto> updateExpense(@PathVariable Long id, @Valid @RequestBody CreateUpdateExpenseRequest updateExpenseRequest) {
-        ExpenseDto updatedExpense = expenseService.updateExpense(updateExpenseRequest, id);
+        ExpenseDto updatedExpense = this.expenseService.updateExpense(updateExpenseRequest, id);
 
 
         return ResponseEntity.ok(updatedExpense);
