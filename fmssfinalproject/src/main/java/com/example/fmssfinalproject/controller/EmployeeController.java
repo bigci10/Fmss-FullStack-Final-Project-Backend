@@ -25,7 +25,7 @@ public class EmployeeController {
 
     @PostMapping
     ResponseEntity<EmployeeDto> saveEmployee(@Valid @RequestBody CreateUpdateEmployeeRequest createEmployeeRequest) {
-        EmployeeDto employeeDto = employeeService.saveEmployee(createEmployeeRequest);
+        EmployeeDto employeeDto = this.employeeService.saveEmployee(createEmployeeRequest);
 
         return ResponseEntity.ok(employeeDto);
     }
@@ -40,7 +40,7 @@ public class EmployeeController {
 
     @GetMapping("/{id}")
     ResponseEntity<EmployeeDto> getEmployeeById(@PathVariable Long id) {
-        EmployeeDto employee = employeeService.getEmployeeById(id);
+        EmployeeDto employee = this.employeeService.getEmployeeById(id);
 
 
         return ResponseEntity.ok(employee);
@@ -54,7 +54,7 @@ public class EmployeeController {
 
     @PutMapping("/{id}")
     ResponseEntity<EmployeeDto> updateEmployee(@PathVariable Long id, @Valid @RequestBody CreateUpdateEmployeeRequest updateEmployeeRequest) {
-        EmployeeDto updatedEmployee = employeeService.updateEmployee(id, updateEmployeeRequest);
+        EmployeeDto updatedEmployee = this.employeeService.updateEmployee(id, updateEmployeeRequest);
 
         return ResponseEntity.ok(updatedEmployee);
     }
