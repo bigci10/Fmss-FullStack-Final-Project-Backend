@@ -2,19 +2,18 @@ package com.example.fmssfinalproject.mapper.impl;
 
 import com.example.fmssfinalproject.dto.request.CreateUpdateAddressRequest;
 import com.example.fmssfinalproject.dto.response.AddressDto;
-import com.example.fmssfinalproject.exception.ResourceNotFoundException;
+
 import com.example.fmssfinalproject.mapper.IAddressMapper;
 import com.example.fmssfinalproject.model.Address;
-import com.example.fmssfinalproject.model.Employee;
-import com.example.fmssfinalproject.repository.EmployeeRepository;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-@RequiredArgsConstructor
+
 @Component
 public class AddressMapperImpl implements IAddressMapper {
 
-    private EmployeeRepository employeeRepository;
+   
 
     @Override
     public AddressDto addressToDto(Address address) {
