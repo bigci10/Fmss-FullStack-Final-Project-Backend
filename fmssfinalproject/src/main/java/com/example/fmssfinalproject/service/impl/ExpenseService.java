@@ -27,7 +27,7 @@ public class ExpenseService implements IExpenseService {
     public ExpenseDto saveExpense(CreateUpdateExpenseRequest createExpenseRequest) {
 
         Expense expense = this.expenseMapper.createExpenseFromCreateExpenseRequest((createExpenseRequest));
-        expenseRepository.save(expense);
+        this.expenseRepository.save(expense);
 
         return this.expenseMapper.expenseToDto(expense);
     }
